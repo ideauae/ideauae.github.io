@@ -51,6 +51,7 @@
 <link href="css-pn/theme-plugin.css" rel="stylesheet" type="text/css">
 <!--== style -->
 <link href="css-pn/style.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 
@@ -111,7 +112,7 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          What is says our clients
+          Featured Product
         </h2>
       </div>
       <div id="carouselExample2Indicators" class="carousel slide" data-ride="carousel">
@@ -211,6 +212,67 @@
   </section>
   <!-- end client section -->
 
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Get In touch
+        </h2>
+      </div>
+      <div class="">
+        <div class="row">
+          <div class="col-md-6 ">
+            <form id="submit-form" action="">
+              <div class="contact_form-container">
+                <div>
+                  <div>
+                    <input type="text" name= "Name" placeholder="Full Name" required/>
+                  </div>
+                  <div>
+                    <input type="email" name= "Email" placeholder="Email " required/>
+                  </div>
+                  <div>
+                    <input type="number" name= "Phone" placeholder="Phone Number" required/>
+                  </div>
+                  <div class="">
+                    <input type="text" name= "Message" placeholder="Message" required class="message_input" />
+                  </div>
+                  <div class=" ">
+                    <button type="submit">
+                      Send
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $("#submit-form").submit((e)=>{
+    e.preventDefault()
+    $.ajax({
+    url:"https://script.google.com/macros/s/AKfycbzWd02v0OnL9y2ph949Odo-9X5lhpju5FbXktJdjZPLDcoRaIZBK0pqQzCruGxfIlRM6A/exec",
+    data:$("#submit-form").serialize(),
+    method:"post",
+    success:function (response){
+    alert("Our team will be in contact with you shortly. Thank you!")
+    window.location.reload()
+    //window.location.href="https://google.com"
+    },
+    error:function (err){
+    alert("Something Error")
+    
+    }
+    })
+    })
+    </script>
+
+  <!-- end contact section -->
 
   <!-- info section -->
 
