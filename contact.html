@@ -53,6 +53,23 @@
 <link href="css-pn/style.css" rel="stylesheet" type="text/css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<script>
+  var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+  if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+  function mischandler(){
+  return false;
+  }
+  function mousehandler(e){
+  var myevent = (isNS) ? e : event;
+  var eventbutton = (isNS) ? myevent.which : myevent.button;
+  if((eventbutton==2)||(eventbutton==3)) return false;
+  }
+  document.oncontextmenu = mischandler;
+  document.onmousedown = mousehandler;
+  document.onmouseup = mousehandler;
+  </script>
+  
+
 </head>
 
 <a id="callme" href="tel:+97122465956">
@@ -273,7 +290,7 @@
     </script>
 
   <!-- end contact section -->
-
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14535.930527042234!2d54.5073402!3d24.3819076!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd7371c779d9b5677!2sIDEAL%20PLUS%20GENERAL%20TRADING%20LLC!5e0!3m2!1sen!2sae!4v1646900164199!5m2!1sen!2sae" width="2000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
   <!-- info section -->
 
   <section class="info_section layout_padding2">
@@ -284,7 +301,7 @@
             Contact Us
           </h4>
           <div class="contact_items">
-            <a href="https://goo.gl/maps/wEYg6re7b2rcUtAU6" target="_blank">
+            <a href="https://goo.gl/maps/wzEyRnKNb1EzUCfM9" target="_blank">
               <div class="img-box">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
               </div>

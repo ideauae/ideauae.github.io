@@ -52,6 +52,24 @@
 <link href="css-pn/theme-plugin.css" rel="stylesheet" type="text/css">
 <!--== style -->
 <link href="css-pn/style.css" rel="stylesheet" type="text/css">
+
+
+<script>
+  var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+  if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+  function mischandler(){
+  return false;
+  }
+  function mousehandler(e){
+  var myevent = (isNS) ? e : event;
+  var eventbutton = (isNS) ? myevent.which : myevent.button;
+  if((eventbutton==2)||(eventbutton==3)) return false;
+  }
+  document.oncontextmenu = mischandler;
+  document.onmousedown = mousehandler;
+  document.onmouseup = mousehandler;
+  </script>
+  
 </head>
 
 <a id="callme" href="tel:+97122465956">
@@ -560,7 +578,7 @@
             Contact Us
           </h4>
           <div class="contact_items">
-            <a href="https://goo.gl/maps/wEYg6re7b2rcUtAU6" target="_blank">
+            <a href="https://goo.gl/maps/wzEyRnKNb1EzUCfM9" target="_blank">
               <div class="img-box">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
               </div>
